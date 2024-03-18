@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+SLIT model
+{% endblock %}
+
+
+{% block head %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='base.js') }}"></script>
+{% endblock %}
+
+
+{% block content %}
+<div style="display: flex; justify-content: space-around; margin-top: 30px;">
+    <div id="inputs">
+        <button onclick="set_defaults(); solve()">Zet waarden terug naar beginwaarden</button>
+        <br><br><br>
+    </div>
+
+    <div style="width: 70%; height: 30%">
+        <canvas id="chart"></canvas>
+        <img src="{{ url_for('static', filename='flowchart.png') }}" style="justify-content: center">
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='slit.js') }}"></script>
+{% endblock %}

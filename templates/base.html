@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+
+    <title>{% block title %}{% endblock %}</title>
+    {% block head %}{% endblock %}
+    <ul class="navbar">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">Over de modellen</a></li>
+        <li><a href="{{ url_for('sir') }}">SIR model simuleren</a></li>
+        <li><a href="{{ url_for('slit') }}">SLIT model simuleren</a></li>
+    </ul>
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>
