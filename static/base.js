@@ -75,7 +75,7 @@ function create_chart(labels, colors) {
 }
 
 
-function create_input_slider(id, symbol, text, min=0, max=1, step=0.0001) {
+function create_input_slider(id, symbol, text, min=0, max=1, step=0.00001) {
     // TODO -- instead make one div in html and then use cloneNode to copy it
 
     const container = create_element("div", {className: "container"});

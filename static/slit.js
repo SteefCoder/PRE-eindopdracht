@@ -70,7 +70,7 @@ window.onload = () => {
     create_input_slider("time", "t", "De tijd om vooruit te kijken in jaren", 1, 100, 1);
     create_input_slider("eta", "η", "Het deel van de vatbare groep dat per jaar wordt geïnfecteerd met tbc. In India is dit ongeveer 0.003% van de bevolking, oftwel zo'n 42 duizend mensen per jaar.");
     create_input_slider("phi", "ϕ", "Het deel van de genezen groep dat per jaar wordt geïnfecteerd. Dit percentage is hetzelfde als bij de vatbare groep, omdat tbc geen immuniteit geeft na genezing.");
-    create_input_slider("r1", "r1", "Het deel van de groep met niet-besmettelijke tbc dat per jaar geneest. Dit is slechts in India 0.01% omdat niet-besmettelijke tbc ook geen symptomen heeft en dus vaak niet wordt opgemerkt.");
+    create_input_slider("r1", "r1", "Het deel van de groep met niet-besmettelijke tbc dat per jaar geneest. Dit is in India slechts 0.01% omdat niet-besmettelijke tbc ook geen symptomen heeft en dus vaak niet wordt opgemerkt.");
     create_input_slider("r2", "r2", "Het deel van de groep met besmettelijke tbc dat per jaar geneest. In India wordt per jaar bijna 60% van de mensen met tbc genezen. De overlijdenskans wordt bij dit model niet meegerekend.");
     create_input_slider("k", "k", "Het deel van de groep met niet-besmettelijke tbc dat per jaar symptomen krijgt en dus besmettelijk wordt. Dat is zo'n 8.3% van de mensen met niet-besmettelijke tbc per jaar. Ongeveer 2.5% van de bevolking in India heeft tbc in de niet-besmettelijke vorm, terwijl maar 0.32% besmettelijke tbc heeft.");
     set_defaults();

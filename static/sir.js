@@ -6,13 +6,14 @@ var chart;
 function solve_SIR_progression(
     transmission_rate,
     recovery_rate,
+    start_infected,
     time
 ) {
     const steps = 1000;
     let step_size = time / steps;
 
-    let S = 1 - 3e-6; // susceptible
-    let I = 3e-6;     // infected
+    let S = 1 - start_infected; // susceptible
+    let I = start_infected;     // infected
     let R = 0;        // recovered
     
     let dS, dI, dR;
@@ -38,6 +39,7 @@ function solve() {
     solve_SIR_progression(
         get_input_value("transmission"),
         get_input_value("recovery"),
+        get_input_value("infected"),
         get_input_value("time")
     );
 }
@@ -45,6 +47,7 @@ function solve() {
 function set_defaults() {
     set_input_value("transmission", 0.5);
     set_input_value("recovery", 0.15);
+    set_input_value("infected", 0.00003);
     set_input_value("time", 100);
 }
 
@@ -55,6 +58,7 @@ window.onload = () => {
     )
 
     create_input_slider("time", "t", "Tijd vooruit kijken (jaren)", 1, 100, 1);
+    create_input_slider("infected", "I", "Aantal infectieuze mensen in het begin");
     create_input_slider("transmission", "β", "Verspreidingssnelheid");
     create_input_slider("recovery", "γ", "Herstelsnelheid");
 
