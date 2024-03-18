@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Over de modellen
+{% endblock %}
+
+{% block content %}
+
+<h1>Over de SIR en SLIT-modellen</h1>
+<h2>Het SIR-model</h2>
+<p>
+    Het SIR-model is een eenvoudig wiskundig model dat gebruikt wordt om de verspreiding van infectieziekten te modelleren. Het model bestaat uit drie differentiaalvergelijkingen. Het SIR model maakt onderscheid in drie groepen: S, I en R. S(t) geeft het aantal mensen die vatbaar (Suspectible) zijn voor de ziekte weer. I(t) geeft het aantal geïnfecteerde (Infectious) mensen aan, deze zijn in staat de ziekte te verspreiden door contact met de vatbare groep. R(t) is de herstelde (Recovered) groep, deze bestaat uit de mensen die genezen en dus immuun zijn. (Brauer et al., 2019)
+</p>
+<p>
+    In het model worden twee parameters gebruikt, deze kunnen jullie hiernaast zelf bepalen.
+</p>
+
+<ul>
+    <p>β is de transmissiesnelheid, dus de snelheid waarmee een infectieus persoon anderen kan besmetten. Dit getal geeft weer hoe snel mensen van de vatbare groep (S) naar de geïnfecteerde groep (I) gaan. De transmissiesnelheid hangt af van verschillende factoren, bijvoorbeeld de ziekte, de mate van contact tussen individuen en eventuele maatregelen om de verspreiding te beperken.</p>
+    <p>γ is de herstelsnelheid, dus hoe snel de infectieuze individuen herstellen en van de categorie geïnfecteerd (I) naar de categorie herstelt (R) gaan. De herstelsnelheid hangt af van verschillende factoren, bijvoorbeeld de ziekte, het immuunsysteem van de geïnfecteerde en de beschikbaarheid van behandelingen.</p>
+</ul>
+
+<p>
+    We gaan er in dit model vanuit dat het totaal aantal mensen gelijk blijft. Om aan de differentiaalvergelijkingen te kunnen rekenen, moeten de beginwaarden van de drie groepen vastgesteld worden. Dit kunnen jullie ook doen door de onderste slider. Het aantal herstelde mensen is sowieso nul aan het begin van de epidemie. Jullie kunnen het aantal geïnfecteerde mensen instellen en het aantal vatbare mensen is de rest. Het meest logisch is dat het aantal vatbare mensen dicht bij de totale bevolking begint, aangezien aan het begin van de epidemie nog niet veel mensen ziek zijn. 
+</p>
+
+<h2>Het SLIT-model</h2>
+<p>
+    Het SLIT-model is een uitbreiding op het SIR-model, er is één extra groep: de latente groep. SLIT staat voor Susceptible (vatbaar), Latent (latent), Infectious (geïnfecteerd) Treated (behandeld/genezen). De latente groep bestaat uit individuen die wel besmet zijn, maar nog niet besmettelijk zijn en zelf ook nog geen symptomen hebben. 
+</p>
+<p>
+    Dit model is wat ingewikkelder dan het SIR-model, er worden vijf parameters gebruikt. De parameters kunnen jullie hiernaast ook zelf weer veranderen, om te kijken wat er met het model gebeurt. 
+</p>
+<ul>
+    <p>
+        η is de transmissiesnelheid, dus de snelheid waarmee een infectieus persoon anderen kan besmetten. Dit getal geeft weer hoe snel mensen van de vatbare groep (S) naar de latente groep (L) gaan. De transmissiesnelheid hangt net als bij het SIR-model af van verschillende factoren, bijvoorbeeld de ziekte, de mate van contact tussen individuen en eventuele maatregelen om de verspreiding te beperken.
+    </p>
+    <p>
+        k geeft de latentieperiode weer, dus hoelang het duurt voordat iemand die latent is de ziekte actief krijgt. De latentieperiode varieert heel erg per soort ziekte.
+    </p>
+    <p>
+        r1 en r2 zijn de herstelsnelheden, dus hoe snel latente of infectieuze individuen herstellen. R1 geeft weer hoe snel iemand die latent is herstelt en r2 geeft weer hoe snel iemand die infectieus is herstelt. Voor sommige infectieziekten zit hier geen verschil in en voor anderen wel. De herstelsnelheden zijn afhankelijk van vele factoren, waaronder de soort ziekte, de gezondheidszorg en het immuunsysteem van het slachtoffer.
+    </p>
+    <p>
+        φ is reïnfectiesnelheid, deze parameter geeft de snelheid weer waarmee individuen die eerder hersteld zijn van de infectie opnieuw ziek worden en terugkeren naar de latente groep. Niet alle ziekten hebben een reïnfectiesnelheid, omdat er ook immuniteit kan ontstaan.
+    </p>
+</ul>
+
+<p>
+    Ook hier moeten weer de startwaarden van de groepen worden vastgesteld, voordat het model gemaakt kan worden. Het meest logische zou zijn dat de vatbare groep (S) weer uit bijna de gehele bevolking zou bestaan. De latente groep (L) en de geïnfecteerde groep (I) allebei een klein aantal zouden zijn. En dat de behandelde/genezen groep nog nul is.
+</p>
+
+{% endblock %}

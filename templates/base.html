@@ -8,8 +8,9 @@
     <title>{% block title %}{% endblock %}</title>
     {% block head %}{% endblock %}
     <ul class="navbar">
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('about') }}">Over de modellen</a></li>
+        <li><a href="{{ url_for('home') }}">Over de site</a></li>
+        <li><a href="{{ url_for('tbc_model') }}">Het TBC-model</a></li>
+        <li><a href="{{ url_for('models') }}">De SIR en SLIT-modellen</a></li>
         <li><a href="{{ url_for('sir') }}">SIR model simuleren</a></li>
         <li><a href="{{ url_for('slit') }}">SLIT model simuleren</a></li>
     </ul>

@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('about.html')
 
 @app.route('/sir')
 def sir():
@@ -14,6 +14,10 @@ def sir():
 def slit():
     return render_template('slit.html')
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
+@app.route('/modellen')
+def models():
+    return render_template('modellen.html')
+
+@app.route('/tbc-model')
+def tbc_model():
+    return render_template('tbc-model.html')

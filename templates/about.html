@@ -1,133 +1,40 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Home
+About
 {% endblock %}
 
 {% block content %}
 
+
+<h1>Over deze site</h1>
+
+<p>
+    Deze site is gemaakt door Lisanne van Seventer en Stefan van der Duijs voor de eindopdracht van PRE-university.
+    Lisanne schreef haar onderzoek over het modelleren van de verspreiding van tuberculose in India.
+</p>
+<p>
+    De modellen kunnen helpen bij het begrijpen van epidemieën en om effectieve strategieën voor bestrijding te ontwikkelen.
+    De modellen bestaan uit differentiaal vergelijkingen en zijn numeriek op te lossen: de computer geeft het antwoord in de vorm van een grafiek weer. Op deze website kan je zelf aan de slag met wiskundige modellen, die de verspreiding van infectieziekten zoals COVID-19, influenza en tuberculose modelleren.
+    Er bestaan veel verschillende soorten modellen, op deze website laten we het SIR-model en het SLIT-model zien.
+</p>
+<p>
+    We nodigen je uit om met behulp van de interactieve modellen op deze website te experimenteren en te verkennen hoe verschillende parameters en scenario's de verspreiding van infectieziekten beïnvloeden.
+    Door het aanpassen van de parameters kun je inzicht krijgen in de effecten van maatregelen zoals vaccinatie, sociale afstand en behandelingen op het verloop van een epidemie.
+</p>
+<p>
+    Op onze website bieden we ook een gedetailleerd wiskundig model van tuberculose in India.
+    Dit model laat zien hoe wiskunde kan bijdragen aan een dieper begrip van deze ziekte en de ontwikkeling van effectieve bestrijdingsstrategieën. Je kunt meer te weten komen over de achterliggende mechanismen en hoe de parameters worden bepaald.
+    Ontdek hoe dit model ons kan helpen bij het plannen van interventies en het bestrijden van tuberculose.
+</p>
 <br>
-<h1>Over de modellen</h1>
-<h2>Het SIR-model</h2>
 <p>
-    Het SIR-model is een eenvoudig wiskundig model dat gebruikt wordt om de verspreiding van infectieziekten te modelleren. Het model bestaat uit drie differentiaalvergelijkingen. Het SIR model maakt onderscheid in drie groepen: S, I en R. S(t) geeft het aantal mensen die vatbaar (Suspectible) zijn voor de ziekte weer. I(t) geeft het aantal geïnfecteerde (Infectious) mensen aan, deze zijn in staat de ziekte te verspreiden door contact met de vatbare groep. R(t) is de herstelde (Recovered) groep, deze bestaat uit de mensen die genezen en dus immuun zijn. (Brauer et al., 2019)
-</p>
-<p>
-    In het model worden twee parameters gebruikt, deze kunnen jullie hiernaast zelf bepalen.
+    De broncode van de site is te vinden op
+    <a href="https://github.com/SteefCoder/PRE-eindopdracht" target="_blank">https://github.com/SteefCoder/PRE-eindopdracht</a>
+    <br>
+    Deze site wordt gehost op de servers van pythonanywhere.com en blijft beschikbaar tot uiterlijk 17 juni 2024.
+
 </p>
 
-<ul>
-    <p>β is de transmissiesnelheid, dus de snelheid waarmee een infectieus persoon anderen kan besmetten. Dit getal geeft weer hoe snel mensen van de vatbare groep (S) naar de geïnfecteerde groep (I) gaan. De transmissiesnelheid hangt af van verschillende factoren, bijvoorbeeld de ziekte, de mate van contact tussen individuen en eventuele maatregelen om de verspreiding te beperken.</p>
-    <p>γ is de herstelsnelheid, dus hoe snel de infectieuze individuen herstellen en van de categorie geïnfecteerd (I) naar de categorie herstelt (R) gaan. De herstelsnelheid hangt af van verschillende factoren, bijvoorbeeld de ziekte, het immuunsysteem van de geïnfecteerde en de beschikbaarheid van behandelingen.</p>
-</ul>
-
-<p>
-    We gaan er in dit model vanuit dat het totaal aantal mensen gelijk blijft. Om aan de differentiaalvergelijkingen te kunnen rekenen, moeten de beginwaarden van de drie groepen vastgesteld worden. Dit kunnen jullie ook doen door de onderste slider. Het aantal herstelde mensen is sowieso nul aan het begin van de epidemie. Jullie kunnen het aantal geïnfecteerde mensen instellen en het aantal vatbare mensen is de rest. Het meest logisch is dat het aantal vatbare mensen dicht bij de totale bevolking begint, aangezien aan het begin van de epidemie nog niet veel mensen ziek zijn. 
-</p>
-
-ⅆS/ⅆt=-βIS
-ⅆI/ⅆt=βIS- γI 
-ⅆR/ⅆt= γI
-
-<h2>Het SLIT-model</h2>
-<p>
-    Het SLIT-model is een uitbreiding op het SIR-model, er is één extra groep: de latente groep. SLIT staat voor Susceptible (vatbaar), Latent (latent), Infectious (geïnfecteerd) Treated (behandeld/genezen). De latente groep bestaat uit individuen die wel besmet zijn, maar nog niet besmettelijk zijn en zelf ook nog geen symptomen hebben. 
-</p>
-<p>
-    Dit model is wat ingewikkelder dan het SIR-model, er worden vijf parameters gebruikt. De parameters kunnen jullie hiernaast ook zelf weer veranderen, om te kijken wat er met het model gebeurt. 
-</p>
-<ul>
-    <p>
-        η is de transmissiesnelheid, dus de snelheid waarmee een infectieus persoon anderen kan besmetten. Dit getal geeft weer hoe snel mensen van de vatbare groep (S) naar de latente groep (L) gaan. De transmissiesnelheid hangt net als bij het SIR-model af van verschillende factoren, bijvoorbeeld de ziekte, de mate van contact tussen individuen en eventuele maatregelen om de verspreiding te beperken.
-    </p>
-    <p>
-        k geeft de latentieperiode weer, dus hoelang het duurt voordat iemand die latent is de ziekte actief krijgt. De latentieperiode varieert heel erg per soort ziekte.
-    </p>
-    <p>
-        r1 en r2 zijn de herstelsnelheden, dus hoe snel latente of infectieuze individuen herstellen. R1 geeft weer hoe snel iemand die latent is herstelt en r2 geeft weer hoe snel iemand die infectieus is herstelt. Voor sommige infectieziekten zit hier geen verschil in en voor anderen wel. De herstelsnelheden zijn afhankelijk van vele factoren, waaronder de soort ziekte, de gezondheidszorg en het immuunsysteem van het slachtoffer.
-    </p>
-    <p>
-        φ is reïnfectiesnelheid, deze parameter geeft de snelheid weer waarmee individuen die eerder hersteld zijn van de infectie opnieuw ziek worden en terugkeren naar de latente groep. Niet alle ziekten hebben een reïnfectiesnelheid, omdat er ook immuniteit kan ontstaan.
-    </p>
-</ul>
-
-<p>
-    Ook hier moeten weer de startwaarden van de groepen worden vastgesteld, voordat het model gemaakt kan worden. Het meest logische zou zijn dat de vatbare groep (S) weer uit bijna de gehele bevolking zou bestaan. De latente groep (L) en de geïnfecteerde groep (I) allebei een klein aantal zouden zijn. En dat de behandelde/genezen groep nog nul is.
-</p>
-ⅆS/ⅆt=-ηSI
-ⅆL/ⅆt=ηSI -(k + r_1)L + φT
-ⅆI/ⅆt=kL - r_2 I
-ⅆT/ⅆt=r_1 L + r_2 I - φT
-
-<h2>Het TBC-model</h2>
-<p>
-Op deze pagina zie je hoe wiskundig onderzoek kan helpen bij het begrijpen en bestrijden van tuberculose (tbc) in India. Het doel van het onderzoek is om te begrijpen hoe tbc zich verspreidt en welke manieren het meest effectief zijn om deze ziekte te stoppen. Dit is belangrijk omdat tbc nog steeds een ernstige ziekte is die vooral in India voorkomt en veel mensen treft. 
-</p>
-<h3>Tuberculose</h3>
-<p>
-    Tuberculose (tbc) is een infectieziekte veroorzaakt door de mycobacterium tuberculosis bacterie (MTB). De meest voorkomende vorm is longtuberculose. (Tuberculose | RIVM, z.d.). 
-</p>
-<p>
-    Het besmettingsproces gaat van start als de mycobacterium tuberculosis (MTB) in de longen van de te besmette persoon terecht komt door inademing. Vanaf hier vecht een immuunrespons tegen de bacterie; de patiënt heeft dan latent tbc. Latent zijn voor een ziekte houdt in dat je wel besmet bent, maar geen symptomen hebt en ook niet besmettelijk bent. Wanneer de bacterie wint van de immuunrespons ontwikkelt de patiënt actief tbc (Kiazyk & Ball, 2017). Hierdoor zal de bacterie verder kunnen verspreiden. In meer dan 90% van de gevallen wint de bacterie niet, maar gaat ook niet weg. De patiënt heeft dan permanente latente tbc. 
-</p>
-<p>
-    Vooral in tweede- en derdewereldlanden heerst tbc nog in hevige mate. Dit komt doordat er in  deze landen niet voldoende gezondheidszorg is om de verspreiding van tbc in perken.
-</p>
-<p>
-    Ter inperking van tbc kunnen veel maatregelen in worden gezet. Bij ons onderzoek vergeleken we de volgende acht maatregelen met elkaar: 
-</p>
-<ul>
-    <p>
-        Hygiëne en ventilatie: Door hoesten in de elleboog en het openzetten van ramen is het lastiger voor de tbc-bacterie om een vatbaar persoon te bereiken.
-    </p>
-    <p>
-        Mondkapjes: Door het blokkeren van de mond kan de tbc-bacterie niet in de lucht geraken. 
-    </p>
-    <p>
-        Quarantaine: De geïnfecteerde persoon kan geen vatbare personen besmetten door het ontbreken van contact. 
-    </p>
-    <p>
-        Vaccinatie: Door vaccineren zullen minder mensen de ziekte kunnen ontwikkelen en dus ook minder mensen de ziekte kunnen verspreiden. 
-    </p>
-    <p>
-        Afstand bewaren: Hierdoor is het lastiger voor de tbc-bacterie om een ander (vatbaar) persoon te bereiken. 
-    </p>
-    <p>
-        Testen: Door het testen (en dus opsporen) van tbc kunnen mensen met latent tbc geholpen worden voordat ze besmettelijk worden. 
-    </p>
-    <p>
-        Voorlichting: Door mensen informatie te geven over symptomen zullen tbc-patiënten eerder door hebben dat ze tbc hebben. Hierdoor verminder je ook de tijd dat infectieuze individuen andere mensen kunnen aansteken. 
-    </p>
-    <p>
-        Medicijnen: Door medicijnen maak je een tbc-patiënt beter. Hierdoor neemt dus het tbc-dodenaantal af én perk je de tijd in dat infectieuze mensen anderen aansteken kunnen.
-    </p>
-</ul>
-
-<h3>Model</h3>
-* Insert tuberculose model van achterin PWS *
-<p>
-    Ditzelfde model staat op de andere pagina, op die pagina kan je zelf de parameters variëren om te zien hoe dit de verspreiding beïnvloedt. Hier gaan we uit van de parameters die hieronder benoemd worden, daar staat ook hoe die bepaalt zijn. We gebruiken als startwaarden van het model:
-</p>
-
-S0: 95,47. Het overgrootste deel van de bevolking komt nooit met tuberculose in aanraking.
-<br>
-L0: 2,5. Dit is omdat ongeveer 10 keer zoveel mensen latente tuberculose hebben als actieve tuberculose.
-<br>
-I0: 0,32. Dit is iets lager dan het percentage bekende actieve tuberculose gevallen in India, omdat niet alle bekende tuberculose gevallen actief zijn, maar wel de meerderheid. 
-<br>
-T0: 1,71.
-
-
-<h3>Parameterbepaling</h3>
-
-<p>Bij het bepalen van de parameters voor ons SLIT-model hebben we verschillende factoren in overweging genomen om ervoor te zorgen dat het model nauwkeurig de verspreiding van tuberculose in India weerspiegelt.</p>
-<p>Transmissiesnelheid vanaf vatbare individuen (η): We hebben een waarde van 0,00003 gekozen. Dit getal is moeilijk te bepalen, omdat het sterk afhankelijk is van het gedrag van de bevolking. Door meerdere getallen te proberen zijn wij op 0,00003 uitgekomen. De resultaten die uit dit model kwamen, sloten het best aan op de data van India.</p>
-<p>Transmissiesnelheid vanaf behandelde individuen (ϕ): We hebben ook 0,00003 gekozen, omdat er geen verminderd risico op herinfectie is na herstel.</p>
-<p>Overgangssnelheid van latente naar infectieuze fase (k): We hebben een waarde van 0,0825 gekozen, wat overeenkomt met het geschatte percentage van 8,25% van de WHO van tuberculosegevallen die actief worden in India.</p>
-<p>Herstelsnelheid vanuit de latente groep (r1): Met 0,0001 hebben we aangenomen dat slechts 0,01% van de latente groep geneest. Dit is zo’n laag percentage, omdat deze mensen niet weten dat zijn ziek zijn en dus ook niks zullen doen om beter te worden.</p>
-<p>Herstelsnelheid vanuit de infectieuze groep (r2): Hiervoor gebruiken we een waarde van 0.595. In India wordt gewerkt met een programma dat 70 procent van de actieve tuberculose gevallen detecteert. Hiervan wordt 85 procent succesvol behandeld (Swaminathan, 2014). In ons model is dit één parameter dus vermenigvuldigen wij deze percentages.</p>
-<p>Door deze parameters zorgvuldig te selecteren, konden we een SLIT-model ontwikkelen dat nauw aansluit bij de realiteit van tuberculoseverspreiding in India.</p>
-<h3>Conclusie:</h3>
-<p>We hebben bepaald hoe de parameters zouden veranderen als er bepaalde maatregelen werden genomen. We hebben het model apart getest met deze nieuwe getallen om te zien welke het beste resultaat geeft zonder te veel te kosten. Hieruit is gekomen dat de combinatie van mondkapjes, testen, voorlichting en medicijnen het best is. Deze vier maatregelen hebben allemaal een goede kosten-effectiviteit-verhouding. Ook dekken deze maatregelen verschillende gedeeltes van de verspreiding, zo vallen de mondkapjes onder ’voorkomen’, het testen en de voorlichtingen onder ’detecteren’ en de medicijnen onder ’genezen’.</p>
 
 {% endblock %}
